@@ -1,0 +1,28 @@
+{
+  "name": "llm-error-analysis-platform",
+  "version": "1.0.0",
+  "description": "Platform for comparing LLM responses to software error analysis",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "db:migrate": "node src/database/migrate.js",
+    "analyze": "node src/analyze.js",
+    "seed": "node src/database/seed.js"
+  },
+  "keywords": [
+    "llm",
+    "error-analysis",
+    "gemini",
+    "groq",
+    "mistral"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "axios": "^1.7.9",
+    "dotenv": "^16.4.7",
+    "pg": "^8.13.1"
+  }
+}
