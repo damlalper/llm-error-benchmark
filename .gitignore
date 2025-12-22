@@ -5,6 +5,7 @@ package-lock.json
 # Environment variables
 .env
 .env.local
+evaluation/.env
 
 # Logs
 *.log
@@ -27,3 +28,16 @@ build/
 # Test files (optional - comment out if you want to include)
 test-*.js
 *-test.js
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+*.egg-info/
+
+

@@ -1,0 +1,125 @@
+{
+  "evaluation_date": "2025-12-22T22:37:50.817446",
+  "scores": {
+    "groq": 55.46,
+    "mistral": 83.16666666666667,
+    "cohere": 82.54666666666667,
+    "openrouter_llama": 15.146666666666667,
+    "openrouter_mistral": 15.146666666666667,
+    "openrouter_hermes": 13.433333333333334
+  },
+  "ranking": [
+    [
+      "mistral",
+      83.16666666666667
+    ],
+    [
+      "cohere",
+      82.54666666666667
+    ],
+    [
+      "groq",
+      55.46
+    ],
+    [
+      "openrouter_llama",
+      15.146666666666667
+    ],
+    [
+      "openrouter_mistral",
+      15.146666666666667
+    ],
+    [
+      "openrouter_hermes",
+      13.433333333333334
+    ]
+  ],
+  "best_llm": {
+    "name": "mistral",
+    "score": 83.16666666666667
+  },
+  "worst_llm": {
+    "name": "openrouter_hermes",
+    "score": 13.433333333333334
+  },
+  "detailed_scores": {
+    "groq": {
+      "average_score": 55.46,
+      "total_responses": 150,
+      "valid_responses": 150,
+      "criterion_scores": {
+        "technical_accuracy": 11.973333333333333,
+        "solution_quality": 12.173333333333334,
+        "clarity": 7.166666666666667,
+        "conciseness": 7.36,
+        "speed": 9.72,
+        "reliability": 7.066666666666666
+      }
+    },
+    "mistral": {
+      "average_score": 83.16666666666667,
+      "total_responses": 150,
+      "valid_responses": 150,
+      "criterion_scores": {
+        "technical_accuracy": 21.02,
+        "solution_quality": 21.046666666666667,
+        "clarity": 15.266666666666667,
+        "conciseness": 9.94,
+        "speed": 5.96,
+        "reliability": 9.933333333333334
+      }
+    },
+    "cohere": {
+      "average_score": 82.54666666666667,
+      "total_responses": 150,
+      "valid_responses": 150,
+      "criterion_scores": {
+        "technical_accuracy": 21.873333333333335,
+        "solution_quality": 21.88,
+        "clarity": 14.6,
+        "conciseness": 9.76,
+        "speed": 4.7,
+        "reliability": 9.733333333333333
+      }
+    },
+    "openrouter_llama": {
+      "average_score": 15.146666666666667,
+      "total_responses": 150,
+      "valid_responses": 150,
+      "criterion_scores": {
+        "technical_accuracy": 3.2666666666666666,
+        "solution_quality": 3.2733333333333334,
+        "clarity": 1.9333333333333333,
+        "conciseness": 2.26,
+        "speed": 2.6133333333333333,
+        "reliability": 1.8
+      }
+    },
+    "openrouter_mistral": {
+      "average_score": 15.146666666666667,
+      "total_responses": 150,
+      "valid_responses": 150,
+      "criterion_scores": {
+        "technical_accuracy": 3.2666666666666666,
+        "solution_quality": 3.2733333333333334,
+        "clarity": 1.9333333333333333,
+        "conciseness": 2.26,
+        "speed": 2.6133333333333333,
+        "reliability": 1.8
+      }
+    },
+    "openrouter_hermes": {
+      "average_score": 13.433333333333334,
+      "total_responses": 150,
+      "valid_responses": 150,
+      "criterion_scores": {
+        "technical_accuracy": 2.64,
+        "solution_quality": 2.72,
+        "clarity": 1.6,
+        "conciseness": 2.24,
+        "speed": 2.6333333333333333,
+        "reliability": 1.6
+      }
+    }
+  }
+}
