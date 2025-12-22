@@ -10,12 +10,12 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-async function analyzeError(category, developerName = 'Developer') {
+async function analyzeError(category, developerName = 'Developer', seed = null) {
   console.log('\n╔════════════════════════════════════════════════════════════╗');
   console.log(`║  🚀 6-LLM Error Analysis: ${category.padEnd(33)}║`);
   console.log('╚════════════════════════════════════════════════════════════╝\n');
 
-  const error = getRandomError(category);
+  const error = getRandomError(category, seed);
   console.log(`🔍 Error: ${error.name}`);
   console.log(`📝 Message: ${error.message}\n`);
 
@@ -100,16 +100,22 @@ async function analyzeError(category, developerName = 'Developer') {
   }
 }
 
-async function analyzeMultiple(count = 3) {
-  console.log(`\n🎯 Batch analysis: ${count} errors with 6 LLMs...\n`);
+async function analyzeMultiple(count = 3, developerSeed = 0) {
+  const developerName = process.env.DEVELOPER_NAME || 'Developer';
+
+  console.log(`\n🎯 Batch analysis: ${count} errors with 6 LLMs...`);
+  console.log(`👤 Developer: ${developerName} (Seed: ${developerSeed})\n`);
 
   const categories = getAllCategories();
   const results = [];
 
   for (let i = 0; i < count; i++) {
-    const randomCategory = categories[Math.floor(Math.random() * categories.length)];
+    // Use seed to ensure different developers get different errors
+    const categoryIndex = (developerSeed + i) % categories.length;
+    const selectedCategory = categories[categoryIndex];
+
     try {
-      const result = await analyzeError(randomCategory, process.env.DEVELOPER_NAME || 'Developer');
+      const result = await analyzeError(selectedCategory, developerName, developerSeed + i);
       results.push(result);
 
       if (i < count - 1) {
@@ -131,12 +137,13 @@ const args = process.argv.slice(2);
 
 if (args.length > 0) {
   const category = args[0].toUpperCase();
-  const developerName = args[1] || process.env.DEVELOPER_NAME || 'Developer';
 
   if (category === 'BATCH') {
     const count = parseInt(args[1]) || 3;
-    analyzeMultiple(count).catch(console.error);
+    const developerSeed = parseInt(args[2]) || 0; // NEW: Developer seed for unique data
+    analyzeMultiple(count, developerSeed).catch(console.error);
   } else {
+    const developerName = args[1] || process.env.DEVELOPER_NAME || 'Developer';
     analyzeError(category, developerName)
       .then(() => pool.end())
       .catch(console.error);
@@ -157,7 +164,7 @@ if (args.length > 0) {
 
 Usage:
   node src/index-6llm.js <CATEGORY> [DEVELOPER_NAME]
-  node src/index-6llm.js BATCH [COUNT]
+  node src/index-6llm.js BATCH [COUNT] [SEED]
 
 Categories:
   API_ERR, AUTO_ERR, BROWSER_ERR, CODE_ERR, CONFIG_ERR,
@@ -165,7 +172,11 @@ Categories:
 
 Examples:
   node src/index-6llm.js CODE_ERR "Alice"
-  node src/index-6llm.js BATCH 5
+  node src/index-6llm.js BATCH 50 0      # Developer 1 (seed 0)
+  node src/index-6llm.js BATCH 50 1000   # Developer 2 (seed 1000)
+
+⚠️  Important: Use different SEED values for different developers
+    to ensure unique error sets!
   `);
   pool.end();
 }

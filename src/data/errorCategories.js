@@ -150,13 +150,24 @@ export const ERROR_CATEGORIES = {
 };
 
 // Helper function to get random error from a category
-export function getRandomError(category) {
+// Now supports seed parameter to ensure reproducible randomness
+export function getRandomError(category, seed = null) {
   if (!ERROR_CATEGORIES[category]) {
     throw new Error(`Invalid category: ${category}`);
   }
 
   const errors = ERROR_CATEGORIES[category].errors;
-  const randomIndex = Math.floor(Math.random() * errors.length);
+
+  // If seed is provided, use it for deterministic selection
+  let randomIndex;
+  if (seed !== null) {
+    // Simple seeded random: use seed to create deterministic index
+    randomIndex = seed % errors.length;
+  } else {
+    // Normal random selection
+    randomIndex = Math.floor(Math.random() * errors.length);
+  }
+
   return {
     category,
     categoryName: ERROR_CATEGORIES[category].name,
