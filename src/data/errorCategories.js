@@ -180,6 +180,26 @@ export function getAllCategories() {
   return Object.keys(ERROR_CATEGORIES);
 }
 
+// Helper function to get specific error by code
+export function getErrorByCode(category, errorCode) {
+  if (!ERROR_CATEGORIES[category]) {
+    throw new Error(`Invalid category: ${category}`);
+  }
+
+  const errors = ERROR_CATEGORIES[category].errors;
+  const error = errors.find(err => err.code === errorCode);
+
+  if (!error) {
+    throw new Error(`Error code '${errorCode}' not found in category '${category}'`);
+  }
+
+  return {
+    category,
+    categoryName: ERROR_CATEGORIES[category].name,
+    ...error
+  };
+}
+
 // Helper function to generate prompt for LLM
 export function generatePrompt(error) {
   return `Aşağıdaki yazılım hatasını analiz edin ve detaylı bir çözüm önerisi sunun:
