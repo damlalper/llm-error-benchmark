@@ -496,11 +496,3 @@ Sorularınız için issue açabilirsiniz.
 
 **Not:** Bu platform akademik ve eğitim amaçlıdır. LLM cevaplarının doğruluğu garanti edilmez, sonuçlar karşılaştırmalı analiz için kullanılmalıdır. Tüm LLM'ler ücretsiz tier kullanmaktadır ve rate limit'lere tabidir.
 
-## 🌟 Öne Çıkan Özellikler
-
-- **Tamamen Ücretsiz**: Tüm 6 LLM ücretsiz API kullanıyor
-- **Hızlı**: Groq ile saniyeler içinde sonuç
-- **Güçlü**: Hermes 405B ile derin analiz
-- **Esnek**: Batch processing ile toplu analiz
-- **Açık**: Tüm veriler PostgreSQL'de saklanıyor
-- **Karşılaştırmalı**: 6 farklı yaklaşımı yan yana görme
