@@ -105,7 +105,7 @@ DEVELOPER_NAME=Your Name
 
 #### Otomatik Kurulum (Önerilen):
 ```bash
-node create-db-now.js
+node scripts/setup/create-db-now.js
 ```
 
 #### Manuel Kurulum:
@@ -118,13 +118,13 @@ CREATE DATABASE llm_error_db;
 ### 6. Veritabanı Migration'ı Çalıştırın
 
 ```bash
-node upgrade-db-to-6.js
+node scripts/setup/upgrade-db-to-6.js
 ```
 
 ### 7. Test Edin
 
 ```bash
-node test-db.js
+node scripts/setup/test-db.js
 ```
 
 ## 💻 Kullanım
@@ -229,15 +229,35 @@ llm-error-db/
 │   ├── index.js                      # 3 LLM versiyonu (eski)
 │   ├── index-5llm.js                 # 5 LLM versiyonu
 │   └── index-6llm.js                 # 6 LLM versiyonu ⭐
-├── create-db-now.js                  # Otomatik DB kurulum
-├── upgrade-db-to-6.js                # 6 LLM upgrade script
-├── test-db.js                        # DB bağlantı testi
-├── test-models.js                    # Model test script
+├── evaluation/                       # 🆕 Akademik LLM Değerlendirme Sistemi
+│   ├── main.py                       # Ana değerlendirme script
+│   ├── evaluator.py                  # Değerlendirme motoru
+│   ├── scorer.py                     # Puanlama algoritması
+│   ├── feature_extractor.py          # NLP özellik çıkarımı
+│   ├── config.py                     # Konfigürasyon
+│   ├── requirements.txt              # Python bağımlılıkları
+│   ├── .env.example                  # Python env şablonu
+│   └── README.md                     # Değerlendirme dokümantasyonu
+├── queries/                          # 🆕 SQL Analiz Sorguları
+│   └── analysis_queries.sql          # 8 farklı analiz sorgusu
+├── scripts/
+│   ├── setup/                        # Kurulum scriptleri
+│   │   ├── create-db-now.js          # Otomatik DB kurulum
+│   │   ├── setup-db.js               # Manuel DB kurulum
+│   │   ├── upgrade-db.js             # DB upgrade
+│   │   └── upgrade-db-to-6.js        # 6 LLM upgrade
+│   └── dev-tools/                    # Geliştirici araçları
+│       ├── check-schema.js           # Şema doğrulama
+│       ├── export-data.js            # Veri export
+│       ├── import-csv-robust.js      # Güvenli CSV import
+│       ├── import-merged-data-smart.js # Akıllı veri birleştirme
+│       └── ...                       # Diğer araçlar
 ├── .env.example                      # Ortam değişkenleri şablonu
 ├── .gitignore
 ├── package.json
 ├── prd.md                            # Proje gereksinimleri
 ├── hata-kategorileri.md              # Hata listesi
+├── MERGE_DATABASES.md                # Veritabanı birleştirme rehberi
 └── README.md
 ```
 
@@ -343,6 +363,9 @@ Bu proje **17 Aralık dersi haftalık teslimi** kapsamında geliştirilmiştir.
 - 🏆 Otomatik yanıt süresi ölçümü
 - 🏆 PostgreSQL ile veri persistence
 - 🏆 Batch processing desteği
+- 🏆 Akademik değerlendirme algoritması (6 kriter, ağırlıklı puanlama)
+- 🏆 SQL analiz sorguları koleksiyonu
+- 🏆 Veritabanı birleştirme araçları
 
 ## 🔬 Model Test Araçları
 
@@ -357,14 +380,109 @@ node test-all-free-models.js
 node test-db.js
 ```
 
+## 🎓 Akademik LLM Değerlendirme Sistemi
+
+Proje, LLM'lerin performansını **akademik standartlarda** ölçen bir değerlendirme sistemi içerir.
+
+### Özellikler:
+- **6 Ağırlıklı Kriter**: Teknik Doğruluk (25%), Çözüm Kalitesi (25%), Netlik (20%), Kısalık (10%), Hız (10%), Güvenilirlik (10%)
+- **NLP Tabanlı Analiz**: Bag-of-words özellik çıkarımı
+- **Deterministik Puanlama**: Açıklanabilir ve tekrarlanabilir sonuçlar
+- **PostgreSQL Entegrasyonu**: Otomatik veri analizi
+
+### Kurulum:
+
+```bash
+cd evaluation
+pip install -r requirements.txt
+cp .env.example .env
+# .env dosyasını düzenleyin (DB bilgileri)
+```
+
+### Çalıştırma:
+
+```bash
+python evaluation/main.py
+```
+
+### Sonuçlar:
+
+```
+🏆 BEST LLM: COHERE (84.26/100)
+🥈 RUNNER-UP: MISTRAL (83.77/100)
+🥉 THIRD: GROQ (68.86/100)
+💔 WORST: OPENROUTER_HERMES (14.68/100)
+```
+
+Detaylı metodoloji için: [evaluation/README.md](evaluation/README.md)
+
+## 📊 SQL Analiz Sorguları
+
+Projede hazır SQL analiz sorguları bulunur: [queries/analysis_queries.sql](queries/analysis_queries.sql)
+
+### Örnek Sorgular:
+
+**1. En İyi ve En Kötü LLM'leri Görüntüle:**
+```sql
+SELECT id, error_category, error_message AS description,
+       best_llm, worst_llm
+FROM llm_error_analysis
+ORDER BY id;
+```
+
+**2. LLM Performans Özeti:**
+```sql
+-- Her LLM'in ortalama response time ve seçilme sayısı
+-- Sorgu dosyasında hazır!
+```
+
+**3. Kategoriye Göre En İyi LLM:**
+```sql
+-- Hangi LLM hangi hata kategorisinde daha başarılı?
+-- Sorgu dosyasında hazır!
+```
+
+**4. Detaylı Karşılaştırma:**
+```sql
+-- Tüm LLM'lerin response time'larını yan yana göster
+-- Sorgu dosyasında hazır!
+```
+
+Tüm sorgular pgAdmin'de kullanıma hazır şekilde [queries/analysis_queries.sql](queries/analysis_queries.sql) dosyasında!
+
+## 🔧 Geliştirici Araçları
+
+### Veritabanı Yönetimi:
+```bash
+# Şema doğrulama
+node scripts/dev-tools/check-schema.js
+
+# Veri export (CSV)
+node scripts/dev-tools/export-data.js
+
+# Güvenli CSV import
+node scripts/dev-tools/import-csv-robust.js
+```
+
+### Veri Birleştirme:
+```bash
+# Farklı geliştiricilerin verilerini birleştir
+node scripts/dev-tools/import-merged-data-smart.js
+
+# Detaylı rehber:
+cat MERGE_DATABASES.md
+```
+
 ## 🚧 Gelecek Geliştirmeler
 
 - [ ] Web Dashboard (React)
-- [ ] Otomatik skorlama sistemi
+- [x] Otomatik skorlama sistemi ✅ (Akademik değerlendirme algoritması tamamlandı)
 - [ ] Excel/PDF rapor çıktısı
 - [ ] REST API (FastAPI/Express)
 - [ ] Gerçek zamanlı WebSocket desteği
 - [ ] Kullanıcı yönetimi
+- [x] SQL analiz sorguları ✅ (8 farklı sorgu hazır)
+- [x] Veri birleştirme araçları ✅ (CSV import/export/merge)
 
 ## 📄 Lisans
 
