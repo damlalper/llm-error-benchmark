@@ -1,4 +1,4 @@
-import pool from './src/database/db.js';
+import pool from '../../src/database/db.js';
 
 async function checkCount() {
   const result = await pool.query('SELECT COUNT(*) FROM llm_error_analysis');

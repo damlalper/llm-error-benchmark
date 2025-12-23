@@ -1,5 +1,5 @@
-import pool from './src/database/db.js';
-import { ERROR_CATEGORIES } from './src/data/errorCategories.js';
+import pool from '../../src/database/db.js';
+import { ERROR_CATEGORIES } from '../../src/data/errorCategories.js';
 
 async function findMissingErrors() {
   try {
