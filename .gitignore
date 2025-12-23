@@ -40,4 +40,12 @@ env/
 ENV/
 *.egg-info/
 
+# Data exports
+llm_data_export_*.csv
 
+# Query files (optional - uncomment if you want to ignore)
+# queries/
+
+# Evaluation outputs
+evaluation/evaluation_report.txt
+evaluation/evaluation_results.json
