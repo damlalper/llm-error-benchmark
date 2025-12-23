@@ -1,124 +1,124 @@
 {
-  "evaluation_date": "2025-12-22T22:37:50.817446",
+  "evaluation_date": "2025-12-23T16:03:28.455241",
   "scores": {
-    "groq": 55.46,
-    "mistral": 83.16666666666667,
-    "cohere": 82.54666666666667,
-    "openrouter_llama": 15.146666666666667,
-    "openrouter_mistral": 15.146666666666667,
-    "openrouter_hermes": 13.433333333333334
+    "groq": 68.86378737541528,
+    "mistral": 83.77076411960132,
+    "cohere": 84.25581395348837,
+    "openrouter_llama": 15.913621262458472,
+    "openrouter_mistral": 15.913621262458472,
+    "openrouter_hermes": 14.684385382059801
   },
   "ranking": [
     [
-      "mistral",
-      83.16666666666667
+      "cohere",
+      84.25581395348837
     ],
     [
-      "cohere",
-      82.54666666666667
+      "mistral",
+      83.77076411960132
     ],
     [
       "groq",
-      55.46
+      68.86378737541528
     ],
     [
       "openrouter_llama",
-      15.146666666666667
+      15.913621262458472
     ],
     [
       "openrouter_mistral",
-      15.146666666666667
+      15.913621262458472
     ],
     [
       "openrouter_hermes",
-      13.433333333333334
+      14.684385382059801
     ]
   ],
   "best_llm": {
-    "name": "mistral",
-    "score": 83.16666666666667
+    "name": "cohere",
+    "score": 84.25581395348837
   },
   "worst_llm": {
     "name": "openrouter_hermes",
-    "score": 13.433333333333334
+    "score": 14.684385382059801
   },
   "detailed_scores": {
     "groq": {
-      "average_score": 55.46,
-      "total_responses": 150,
-      "valid_responses": 150,
+      "average_score": 68.86378737541528,
+      "total_responses": 301,
+      "valid_responses": 301,
       "criterion_scores": {
-        "technical_accuracy": 11.973333333333333,
-        "solution_quality": 12.173333333333334,
-        "clarity": 7.166666666666667,
-        "conciseness": 7.36,
-        "speed": 9.72,
-        "reliability": 7.066666666666666
+        "technical_accuracy": 15.611295681063122,
+        "solution_quality": 15.830564784053156,
+        "clarity": 9.335548172757475,
+        "conciseness": 9.272425249169435,
+        "speed": 9.611295681063122,
+        "reliability": 9.20265780730897
       }
     },
     "mistral": {
-      "average_score": 83.16666666666667,
-      "total_responses": 150,
-      "valid_responses": 150,
+      "average_score": 83.77076411960132,
+      "total_responses": 301,
+      "valid_responses": 301,
       "criterion_scores": {
-        "technical_accuracy": 21.02,
-        "solution_quality": 21.046666666666667,
-        "clarity": 15.266666666666667,
-        "conciseness": 9.94,
-        "speed": 5.96,
-        "reliability": 9.933333333333334
+        "technical_accuracy": 21.196013289036546,
+        "solution_quality": 21.222591362126245,
+        "clarity": 15.232558139534884,
+        "conciseness": 9.970099667774086,
+        "speed": 6.1827242524916945,
+        "reliability": 9.966777408637874
       }
     },
     "cohere": {
-      "average_score": 82.54666666666667,
-      "total_responses": 150,
-      "valid_responses": 150,
+      "average_score": 84.25581395348837,
+      "total_responses": 301,
+      "valid_responses": 301,
       "criterion_scores": {
-        "technical_accuracy": 21.873333333333335,
-        "solution_quality": 21.88,
-        "clarity": 14.6,
-        "conciseness": 9.76,
-        "speed": 4.7,
-        "reliability": 9.733333333333333
+        "technical_accuracy": 22.41528239202658,
+        "solution_quality": 22.421926910299003,
+        "clarity": 15.0,
+        "conciseness": 10.0,
+        "speed": 4.4186046511627906,
+        "reliability": 10.0
       }
     },
     "openrouter_llama": {
-      "average_score": 15.146666666666667,
-      "total_responses": 150,
-      "valid_responses": 150,
+      "average_score": 15.913621262458472,
+      "total_responses": 301,
+      "valid_responses": 301,
       "criterion_scores": {
-        "technical_accuracy": 3.2666666666666666,
-        "solution_quality": 3.2733333333333334,
-        "clarity": 1.9333333333333333,
-        "conciseness": 2.26,
-        "speed": 2.6133333333333333,
-        "reliability": 1.8
+        "technical_accuracy": 2.857142857142857,
+        "solution_quality": 2.87375415282392,
+        "clarity": 1.744186046511628,
+        "conciseness": 2.255813953488372,
+        "speed": 4.554817275747508,
+        "reliability": 1.627906976744186
       }
     },
     "openrouter_mistral": {
-      "average_score": 15.146666666666667,
-      "total_responses": 150,
-      "valid_responses": 150,
+      "average_score": 15.913621262458472,
+      "total_responses": 301,
+      "valid_responses": 301,
       "criterion_scores": {
-        "technical_accuracy": 3.2666666666666666,
-        "solution_quality": 3.2733333333333334,
-        "clarity": 1.9333333333333333,
-        "conciseness": 2.26,
-        "speed": 2.6133333333333333,
-        "reliability": 1.8
+        "technical_accuracy": 2.857142857142857,
+        "solution_quality": 2.87375415282392,
+        "clarity": 1.744186046511628,
+        "conciseness": 2.255813953488372,
+        "speed": 4.554817275747508,
+        "reliability": 1.627906976744186
       }
     },
     "openrouter_hermes": {
-      "average_score": 13.433333333333334,
-      "total_responses": 150,
-      "valid_responses": 150,
+      "average_score": 14.684385382059801,
+      "total_responses": 301,
+      "valid_responses": 301,
       "criterion_scores": {
-        "technical_accuracy": 2.64,
-        "solution_quality": 2.72,
-        "clarity": 1.6,
-        "conciseness": 2.24,
-        "speed": 2.6333333333333333,
-        "reliability": 1.6
+        "technical_accuracy": 2.4916943521594686,
+        "solution_quality": 2.5415282392026577,
+        "clarity": 1.495016611295681,
+        "conciseness": 2.1362126245847177,
+        "speed": 4.524916943521594,
+        "reliability": 1.495016611295681
       }
     }
   }

@@ -99,9 +99,11 @@ async function importCSVSmart(csvFiles, clearData = false) {
         };
 
         try {
-          // Note: Only importing columns that exist in YOUR database
-          // Gemini columns are skipped (you have them, friend doesn't)
-          // openrouter_mistral columns are skipped (friend has them, you don't)
+          // Note: ID column is NOT included in INSERT
+          // PostgreSQL will auto-generate sequential IDs
+          // This means each imported record gets a new unique ID
+          // Example: Your DB has IDs 1-200, friend's CSV also has 1-200
+          // After import: Your DB will have IDs 1-200 (yours) + 201-400 (friend's)
 
           await pool.query(`
             INSERT INTO llm_error_analysis (

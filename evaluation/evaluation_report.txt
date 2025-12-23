@@ -1,116 +1,87 @@
-======================================================================
-🚀 LLM EVALUATION SYSTEM
-======================================================================
-
-✅ Database connected
-
-🔍 Starting LLM evaluation...
-
-📊 Fetched 150 responses for 6 LLMs
-⚙️  Evaluating groq...
-   ✅ groq: 55.46/100
-⚙️  Evaluating mistral...
-   ✅ mistral: 83.17/100
-⚙️  Evaluating cohere...
-   ✅ cohere: 82.55/100
-⚙️  Evaluating openrouter_llama...
-   ✅ openrouter_llama: 15.15/100
-⚙️  Evaluating openrouter_mistral...
-   ✅ openrouter_mistral: 15.15/100
-⚙️  Evaluating openrouter_hermes...
-   ✅ openrouter_hermes: 13.43/100
-
-🏆 Best LLM: mistral (83.17)
-💔 Worst LLM: openrouter_hermes (13.43)
-
-✅ Database connection closed
 
 ======================================================================
 📊 LLM EVALUATION RESULTS
 ======================================================================
 
-📅 Evaluation Date: 2025-12-22 22:35:54
+📅 Evaluation Date: 2025-12-23 16:03:28
 
 🏆 OVERALL RANKING:
 
-   🥇 MISTRAL                   83.17/100
-   🥈 COHERE                    82.55/100
-   🥉 GROQ                      55.46/100
-   4. OPENROUTER_LLAMA          15.15/100
-   5. OPENROUTER_MISTRAL        15.15/100
-   6. OPENROUTER_HERMES         13.43/100
+   🥇 COHERE                    84.26/100
+   🥈 MISTRAL                   83.77/100
+   🥉 GROQ                      68.86/100
+   4. OPENROUTER_LLAMA          15.91/100
+   5. OPENROUTER_MISTRAL        15.91/100
+   6. OPENROUTER_HERMES         14.68/100
 
 ----------------------------------------------------------------------
 
-🏆 BEST LLM:  MISTRAL (83.17/100)
-💔 WORST LLM: OPENROUTER_HERMES (13.43/100)
+🏆 BEST LLM:  COHERE (84.26/100)
+💔 WORST LLM: OPENROUTER_HERMES (14.68/100)
 
 ----------------------------------------------------------------------
 
 📋 DETAILED CRITERION SCORES:
 
-   MISTRAL:
-      Technical Accuracy:  21.02/25
-      Solution Quality:    21.05/25
-      Clarity:             15.27/20
-      Conciseness:         9.94/10
-      Speed:               5.96/10
-      Reliability:         9.93/10
-      ─────────────────────────────────────
-      TOTAL:               83.17/100
-
    COHERE:
-      Technical Accuracy:  21.87/25
-      Solution Quality:    21.88/25
-      Clarity:             14.60/20
-      Conciseness:         9.76/10
-      Speed:               4.70/10
-      Reliability:         9.73/10
+      Technical Accuracy:  22.42/25
+      Solution Quality:    22.42/25
+      Clarity:             15.00/20
+      Conciseness:         10.00/10
+      Speed:               4.42/10
+      Reliability:         10.00/10
       ─────────────────────────────────────
-      TOTAL:               82.55/100
+      TOTAL:               84.26/100
+
+   MISTRAL:
+      Technical Accuracy:  21.20/25
+      Solution Quality:    21.22/25
+      Clarity:             15.23/20
+      Conciseness:         9.97/10
+      Speed:               6.18/10
+      Reliability:         9.97/10
+      ─────────────────────────────────────
+      TOTAL:               83.77/100
 
    GROQ:
-      Technical Accuracy:  11.97/25
-      Solution Quality:    12.17/25
-      Clarity:             7.17/20
-      Conciseness:         7.36/10
-      Speed:               9.72/10
-      Reliability:         7.07/10
+      Technical Accuracy:  15.61/25
+      Solution Quality:    15.83/25
+      Clarity:             9.34/20
+      Conciseness:         9.27/10
+      Speed:               9.61/10
+      Reliability:         9.20/10
       ─────────────────────────────────────
-      TOTAL:               55.46/100
+      TOTAL:               68.86/100
 
    OPENROUTER_LLAMA:
-      Technical Accuracy:  3.27/25
-      Solution Quality:    3.27/25
-      Clarity:             1.93/20
+      Technical Accuracy:  2.86/25
+      Solution Quality:    2.87/25
+      Clarity:             1.74/20
       Conciseness:         2.26/10
-      Speed:               2.61/10
-      Reliability:         1.80/10
+      Speed:               4.55/10
+      Reliability:         1.63/10
       ─────────────────────────────────────
-      TOTAL:               15.15/100
+      TOTAL:               15.91/100
 
    OPENROUTER_MISTRAL:
-      Technical Accuracy:  3.27/25
-      Solution Quality:    3.27/25
-      Clarity:             1.93/20
+      Technical Accuracy:  2.86/25
+      Solution Quality:    2.87/25
+      Clarity:             1.74/20
       Conciseness:         2.26/10
-      Speed:               2.61/10
-      Reliability:         1.80/10
+      Speed:               4.55/10
+      Reliability:         1.63/10
       ─────────────────────────────────────
-      TOTAL:               15.15/100
+      TOTAL:               15.91/100
 
    OPENROUTER_HERMES:
-      Technical Accuracy:  2.64/25
-      Solution Quality:    2.72/25
-      Clarity:             1.60/20
-      Conciseness:         2.24/10
-      Speed:               2.63/10
-      Reliability:         1.60/10
+      Technical Accuracy:  2.49/25
+      Solution Quality:    2.54/25
+      Clarity:             1.50/20
+      Conciseness:         2.14/10
+      Speed:               4.52/10
+      Reliability:         1.50/10
       ─────────────────────────────────────
-      TOTAL:               13.43/100
+      TOTAL:               14.68/100
 
 ======================================================================
 
-💾 Results saved to evaluation_results.json
-
-✅ Evaluation complete!
